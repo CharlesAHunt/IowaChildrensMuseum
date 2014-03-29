@@ -1,30 +1,54 @@
-@(loginForm: Form[User], registerForm: Form[User])
+@(loginForm:Form[models.User],registerForm:Form[User])
 
 @import tags._
 
 @main() {
 
-    <div class="container">
+    <div id="playIsLearning">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-4 centered">
+                    <div class="col-lg-5 centered">
+                        <img class="img-responsive img-full center" id="PIL" src="@routes.Assets.at("images/logos/playingIsLearning.PNG")">
+                    </div><!--col-lg-5  -->
+                </div><!-- /col-lg-8 -->
+            </div><!-- /row -->
+            <div>
+                <h2>An Iowa Children's Museum Project</h2>
+            </div>
+        </div> <!-- /container -->
+    </div><!-- /playingIsLearning -->
+    
+    <div id="whatIsPIL">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 ">
+                    <img src="@routes.Assets.at("images/logos/playing-child.jpg")" alt=""> 
+                </div>
+                
+                <div class="col-lg-7 ">
+                    <h3>Playing Is Learning!</h3>
+                    <p>‘Playing is Learning’ was designed to launch a new community conversation about play, recognizing that...</p>
+                    <ul>
+                        <li>Play is important in the everyday lives of children—play brings joy, fun, and exploration of new ideas.</li>
+                        <li>Play is important for life-long learning—play creates a foundation for reading, math, science, and art, bringing these skills together with a motivation to learn</li>
+                    </ul>
 
-        <div>
-            @message()
+                </div>
+            </div>
         </div>
-
-        <div id="entrance">
-            @entrance(loginForm)
+    </div>    
+    <div id="stuartBrown">
+        <div class="container">
+            <h3> “I sometimes compare play to oxygen — it’s all around us, yet goes mostly unnoticed or unappreciated until it is missing.”</h3><p> - Stuart Brown, M.D. Institution for Play</p>
+            <br>
+            <div class="row">
+                <div class="span6">
+                    <div class="flex-video widescreen" style="margin: 0 auto;text-align:center;">
+                    <iframe allowfullscreen="" src="http://player.vimeo.com/video/66080433" frameborder="0" width="500" height="281"></iframe>
+                    </div> 
+                </div>
+            </div>
         </div>
-        <div id="parentCaregiver" style="display: none;">
-            @parentCaregiver()
-        </div>
-        <div id="codes" style="display: none;">
-            @codes()
-        </div>
-        <div id="terms" style="display: none;">
-            @terms()
-        </div>
-        <div id="register" style="display: none;">
-            @register(registerForm)
-        </div>
-
     </div>
 }
